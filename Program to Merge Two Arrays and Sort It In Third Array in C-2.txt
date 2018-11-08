@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <conio.h>
+
+int main ()
+{
+    int arr1[5],arr2[5],arr3[10];
+    int i,j,k=0,temp;
+
+    printf("Enter 5 Elements of First Array : ");
+    for(i=0; i<5; i++)
+    {
+        scanf("%d",&arr1[i]);
+    }
+    printf("Enter 5 Elements of Second Array : ");
+    for(i=0; i<5; i++)
+    {
+        scanf("%d",&arr2[i]);
+    }
+
+    //Merging Elements
+
+    printf("The Merge Elements Are : ");
+    for(i=0; i<10; i++)
+    {
+        if(i>4)
+        {
+            arr3[i] = arr2[k];
+            k++;
+        }
+        else
+            arr3[i] = arr1[i];
+    }
+    for(i=0; i<10; i++)
+    {
+        printf(" %d ",arr3[i]);
+    }
+    printf("\n");
+
+    //Sorting Elements
+
+    printf("The Sorted Elements Are : ");
+    for(i=0; i<10-1; i++)
+    {
+        for(j=i+1; j<10; j++)
+        {
+            if(arr3[j]<arr3[i])
+            {
+                temp = arr3[i];
+                arr3[i] = arr3[j];
+                arr3[j] = temp;
+            }
+        }
+    }
+    for(i=0; i<10; i++)
+    {
+        printf(" %d ",arr3[i]);
+    }
+    printf("\n");
+
+    getch();
+
+    return 0;
+}
